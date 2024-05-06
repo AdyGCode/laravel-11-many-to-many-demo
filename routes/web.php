@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('courses', \App\Http\Controllers\CourseController::class);
+Route::resource('students', \App\Http\Controllers\StudentController::class);
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
