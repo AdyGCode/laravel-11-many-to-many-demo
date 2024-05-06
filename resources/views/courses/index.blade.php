@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Many to Many - Courses') }}
         </h2>
     </x-slot>
 
@@ -10,22 +10,39 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 flex flex-col gap-8">
                     @foreach($courses as $course)
-                        <article class="">
-                            <header class="bg-neutral-600 text-neutral-200">
-                                <h3 class="text-bold">{{ $course->code }} {{ $course->title }}</h3>
+                        <article class="h-full flex flex-col gap-8 bg-white shadow rounded pb-8">
+
+                            <header class="bg-neutral-600 text-neutral-200 p-4 rounded-t flex flex-row justify-between">
+                                <h3 class="text-bold text-xl">{{ $course->title }}</h3>
+                                <p class="text-xl text-neutral-300">{{ $course->code }} </p>
                             </header>
-                            <section>
-                                <p>
-                                    {{ $course->desciption }}
+
+                            <section class="px-4">
+                                <header>
+                                    <h4 class="text-lg font-semibold">Description</h4>
+                                </header>
+                                <p class="italic">
+                                    @empty($course->description)
+                                        -
+                                    @else
+                                        {{ $course->description }}
+                                    @endempty
                                 </p>
                             </section>
-                            <section>
+
+                            <section class="px-4">
                                 <header>
                                     <h4 class="font-semibold">Students</h4>
                                 </header>
-                                @foreach($course->students()->get() as $student)
-                                    <p>{{ $student->family_name }}, {{ $student->given_name }}</p>
-                                @endforeach
+                                <ul class="list-disc ml-6">
+                                    @if(!$course->students()->count())
+                                        {{ __("No Students") }}
+                                    @else
+                                        @foreach($course->students()->get() as $student)
+                                            <li class="">{{ $student->familyGivenName }}</li>
+                                        @endforeach
+                                    @endif
+                                </ul>
                             </section>
                         </article>
                     @endforeach

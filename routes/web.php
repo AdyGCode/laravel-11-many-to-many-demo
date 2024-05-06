@@ -1,14 +1,22 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
+
+use Illuminate\Support\Facades\Storage;
+
+
+
+Route::resource('courses', CourseController::class);
+Route::resource('students', StudentController::class);
+
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::resource('courses', \App\Http\Controllers\CourseController::class);
-Route::resource('students', \App\Http\Controllers\StudentController::class);
 
 
 Route::get('/dashboard', function () {

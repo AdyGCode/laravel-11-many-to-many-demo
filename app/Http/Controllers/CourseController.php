@@ -13,7 +13,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
+        $courses = Course::whereStatus(1)->get();
         return view('courses.index', compact(['courses']));
     }
 
