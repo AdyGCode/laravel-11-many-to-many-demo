@@ -13,7 +13,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all()->sortBy('family_name');
+        return view('students.index', compact(['students']));
     }
 
     /**
