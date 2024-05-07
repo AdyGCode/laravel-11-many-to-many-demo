@@ -1,12 +1,15 @@
 <?php
 
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentController;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
-use Illuminate\Support\Facades\Storage;
 
+// Add a route that can load an image from storage based on a parameter
+Route::get('/images/{imageName}', [ImageController::class, 'show'])->name('image.show');
 
 
 Route::resource('courses', CourseController::class);
