@@ -1,9 +1,13 @@
 <?php
 
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\StudentController;
+
+use App\Http\Controllers\ImageController;
+
+use App\Http\Controllers\ProfileController;
+
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +18,7 @@ Route::get('/images/{imageName}', [ImageController::class, 'show'])->name('image
 
 Route::resource('courses', CourseController::class);
 Route::resource('students', StudentController::class);
+Route::resource('customers', CustomerController::class);
 
 
 Route::get('/', function () {

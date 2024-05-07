@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('given_name');
             $table->string('family_name');
+            $table->string('email');
             $table->timestamps();
         });
     }
