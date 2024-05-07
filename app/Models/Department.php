@@ -12,6 +12,11 @@ class Department extends Model
 
     public function manager()
     {
-        return $this->hasOne(Employee::class, 'id', 'manager');
+        return $this->hasOne(Employee::class);
+    }
+
+    public function employees()
+    {
+        return $this->hasMany(Employee::class);
     }
 }

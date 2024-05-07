@@ -16,23 +16,38 @@ class DepartmentSeeder extends Seeder
     {
         $departments = [
             [
+                'name' => 'Administration',
+                'manager' => 1,
+            ],
+            [
+                'name' => 'Marketing',
+                'manager' => 2,
+            ],
+            [
+                'name' => 'White Goods',
+                'manager' => 5,
+            ],
+            [
+                'name' => 'Sports',
+                'manager' => 6,
+            ],
+            [
                 'name' => 'Shoes',
-                'manager' => null,
+                'manager' => 7,
             ],
             [
                 'name' => 'Clothing',
-                'manager' => null,
+                'manager' => 8,
             ],
             [
                 'name' => 'Toys & Games',
-                'manager' => null,
+                'manager' => 9,
             ],
         ];
 
         $employees = Employee::count();
 
         foreach ($departments as $department){
-            $department['manager'] =  mt_rand(1,$employees);
             Department::create($department);
         }
 

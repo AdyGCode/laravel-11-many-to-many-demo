@@ -12,7 +12,7 @@ class Employee extends Model
 
     public function manager()
     {
-        return $this->hasOne(Employee::class, 'manager', 'id');
+        return $this->hasOne(Employee::class);
     }
 
     public function department()

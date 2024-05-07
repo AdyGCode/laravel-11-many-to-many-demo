@@ -49,7 +49,7 @@
                         </header>
 
                         <p class="px-6 ">Department: {{ $employee->department->name ?? '' }}</p>
-                        <p class="px-6 pb-2">Manager: {{ $employee->manager }}</p>
+                        <p class="px-6 pb-2">Manager: {{ $employee->manager()->family_name }}</p>
 
                     </article>
 
