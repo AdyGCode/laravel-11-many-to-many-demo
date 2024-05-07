@@ -28,8 +28,6 @@
                 </figcaption>
             </figure>
 
-
-
         </section>
 
         <div class="w-full p-2 sm:p-6 lg:p-8 bg-white overflow-hidden shadow-md sm:rounded-lg">
