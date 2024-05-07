@@ -43,7 +43,7 @@
 
                         <header class="bg-neutral-600 text-neutral-200 p-4 rounded-t ">
                             <h3 class="text-bold text-xl">
-                                {{ $department->name }},
+                                {{ $department->name }}
                             </h3>
                         </header>
 
