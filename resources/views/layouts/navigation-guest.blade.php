@@ -21,8 +21,8 @@
                     {{ __('1:1 xxx') }}
                 </x-nav-link>
 
-                <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                    {{ __('1:M xxx') }}
+                <x-nav-link :href="route('customers.index')" :active="request()->routeIs('customers.*')">
+                    {{ __('1:M Customers') }}
                 </x-nav-link>
 
                 <x-nav-link :href="route('courses.index')" :active="request()->routeIs('courses')">
