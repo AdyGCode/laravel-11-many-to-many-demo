@@ -17,21 +17,18 @@
                     {{ __('Home') }}
                 </x-nav-link>
 
-                <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                    {{ __('1:1 xxx') }}
+                <x-nav-link :href="route('pages.one-to-one')" :active="request()->routeIs('pages.one-to-one')">
+                    {{ __('1-to-1') }}
                 </x-nav-link>
 
-                <x-nav-link :href="route('customers.index')" :active="request()->routeIs('customers.*')">
-                    {{ __('1:M Customers') }}
+                <x-nav-link :href="route('pages.one-to-many')" :active="request()->routeIs('pages.one-to-many')">
+                    {{ __('1-to-Many') }}
                 </x-nav-link>
 
-                <x-nav-link :href="route('courses.index')" :active="request()->routeIs('courses')">
-                    {{ __('M:M Courses') }}
+                <x-nav-link :href="route('pages.many-to-many')" :active="request()->routeIs('pages.many-to-many')">
+                    {{ __('Many-to-Many') }}
                 </x-nav-link>
 
-                <x-nav-link :href="route('students.index')" :active="request()->routeIs('students')">
-                    {{ __('M:M Students') }}
-                </x-nav-link>
 
             </div>
 

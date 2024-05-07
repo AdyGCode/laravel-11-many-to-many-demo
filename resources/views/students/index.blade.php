@@ -5,39 +5,29 @@
         </h2>
     </x-slot>
 
-    <section class="py-6 flex flex-row gap-4 max-w-7xl">
+    <section class="py-6 flex flex-col gap-4 max-w-7xl">
 
-        <section class="w-full p-2 sm:p-6 lg:p-8 bg-white overflow-hidden shadow-sm sm:rounded-lg flex flex-col gap-4">
+        <heading class="w-full p-2 sm:p-6 lg:p-8 bg-white overflow-hidden shadow-sm sm:rounded-lg flex flex-col gap-4">
+
             <h3 class="text-lg font-bold text-neutral-500 border-b-2">Many to Many</h3>
-
             <p>
-                Many to many relationships use an reference, or pivot table as part of the 'normalisation'
-                process to remove redundancy and issues with data integrity.
+                Here we see the Students and the courses they are taking or have taken.
             </p>
 
-            <p>
-                In this example we have students who may have taken many courses, and any single course may have many
-                students that have taken or are taking it.
-            </p>
+        </heading>
 
-            <figure class="w-full p-1 shadow flex flex-col gap-1">
-                <img src="{{ route('image.show', ['imageName' => 'ER-Many-to-Many.png']) }}"
-                     alt="Your Image"
-                     class="mx-auto">
-                <figcaption class="text-xs bg-neutral-200 p-1 text-center w-full">
-                    Image showing Many to Many transformed to One to Many : Many to One
-                </figcaption>
-            </figure>
+        <section class="w-full p-2 sm:p-6 lg:p-8 bg-white overflow-hidden shadow-md sm:rounded-lg">
 
-        </section>
+            <header class="text-xl font-semibold mb-4">
+                <h3>Students</h3>
+            </header>
 
-        <div class="w-full p-2 sm:p-6 lg:p-8 bg-white overflow-hidden shadow-md sm:rounded-lg">
+            <div class="text-gray-900 flex flex-row flex-wrap justify-between  gap-4">
 
-            <div class="p-6 text-gray-900 flex flex-col gap-8">
                 @foreach($students as $student)
-                    <article class="h-full flex flex-col gap-8 bg-white shadow rounded pb-8">
+                    <article class="w-1/4 h-full grow flex flex-col bg-white shadow rounded pb-2">
 
-                        <header class="bg-neutral-600 text-neutral-200 p-4 rounded-t flex flex-row justify-between">
+                        <header class="bg-neutral-600 text-neutral-200 p-4 rounded-t mb-6">
                             <h3 class="text-bold text-xl">{{ $student->fullName }}</h3>
                         </header>
 
@@ -49,7 +39,6 @@
                                     </h4>
                                 @else
                                     <h4 class="font-semibold">
-
                                         {{ __("Courses") }}
                                     </h4>
                                 @endif
@@ -69,6 +58,6 @@
                     </article>
                 @endforeach
             </div>
-        </div>
+        </section>
     </section>
 </x-guest-layout>
