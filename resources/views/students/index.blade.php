@@ -12,7 +12,7 @@
 
             <p>
                 Many to many relationships use an reference, or pivot table as part of the 'normalisation'
-                process to remove redundancy and₫issues with data integrity.
+                process to remove redundancy and issues with data integrity.
             </p>
 
             <p>

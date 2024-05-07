@@ -11,7 +11,7 @@
             <h3 class="text-lg font-bold text-neutral-500 border-b-2">Many to Many</h3>
             <p>
                 Many to many relationships use an reference, or pivot table as part of the 'normalisation'
-                process to remove redundancy and₫issues with data integrity.
+                process to remove redundancy and issues with data integrity.
             </p>
 
             <p>
