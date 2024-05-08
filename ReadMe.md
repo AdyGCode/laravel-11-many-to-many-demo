@@ -1,4 +1,4 @@
-<a name="readme-top"></a>
+<a name="readme-top" id="readme-top"></a>
 # Laravel Relationships Demo
 
 This small application shows how to crete relationships between models.
