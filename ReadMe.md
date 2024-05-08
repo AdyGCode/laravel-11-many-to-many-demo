@@ -210,27 +210,41 @@ corporate or other materials both digital and non-digital.
 
 ## References & Further Study
 
-https://laracoding.com/
+- https://laracoding.com/
+- https://yajrabox.com/docs/laravel-datatables/10.0
+- https://laracoding.com/how-to-use-a-many-to-many-relationship-in-laravel/
+- https://laracoding.com/how-to-use-a-one-to-one-relationship-in-laravel/
+- https://medium.com/@afrazahmad090/laravel-many-to-many-relationship-explained-822b554c1973
+- https://www.itsolutionstuff.com/post/laravel-many-to-many-eloquent-relationship-tutorialexample.html
+- https://medium.com/@prevailexcellent/laravel-many-to-many-relationship-complete-tutorial-16025acd5450
+- https://wpwebinfotech.com/blog/laravel-many-to-many-relationship/
+- https://appdividend.com/2022/01/21/laravel-many-to-many-relationship/
+- https://masteringbackend.com/posts/laravel-many-to-many-relationships-with-crud-example/
+- https://www.iankumu.com/blog/laravel-many-to-many-relationship/
+- https://masteringbackend.com/posts/laravel-one-to-one-relationship-with-example/
+- https://kinsta.com/blog/laravel-relationships/
+- https://www.itsolutionstuff.com/post/laravel-one-to-one-eloquent-relationship-tutorialexample.html
+- 
 
-https://yajrabox.com/docs/laravel-datatables/10.0
-
-https://laracoding.com/how-to-use-a-many-to-many-relationship-in-laravel/
-
-https://medium.com/@afrazahmad090/laravel-many-to-many-relationship-explained-822b554c1973
-
-https://www.itsolutionstuff.com/post/laravel-many-to-many-eloquent-relationship-tutorialexample.html
-
-https://medium.com/@prevailexcellent/laravel-many-to-many-relationship-complete-tutorial-16025acd5450
-
-https://wpwebinfotech.com/blog/laravel-many-to-many-relationship/
-
-https://appdividend.com/2022/01/21/laravel-many-to-many-relationship/
-
-https://masteringbackend.com/posts/laravel-many-to-many-relationships-with-crud-example/
-
-https://www.iankumu.com/blog/laravel-many-to-many-relationship/
+Medium articles require a subscription to view more than 3 in a week
+- https://medium.com/@maitrikt1998/laravel-one-to-one-relationship-full-guide-84569cb009c8
+- https://raviyatechnical.medium.com/laravel-eloquent-relationships-laravel-one-to-one-eloquent-relationship-tutorial-69a2835de23d
+- https://arjunamrutiya.medium.com/unveiling-laravels-one-to-one-polymorphic-relationship-a-step-by-step-guide-0a79b4118386
+- https://medium.com/@codesolutionstuff/laravel-one-to-one-eloquent-relationship-tutorial-5be6f5161e72
+- https://parvez1487.medium.com/laravel-table-relationship-methods-with-example-phpflow-com-aea87ce132e5
+- https://medium.com/@mwaqasiu/unlock-the-power-of-one-to-one-relationships-in-laravel-examples-and-step-by-step-implementation-508773cc15e2
 
 
+Other articles not relevant to this project
+- https://medium.com/@soulaimaneyh/php-laravel-advanced-file-storage-and-uploading-7296f562bcaf
+- https://towardsdev.com/how-to-make-reusable-blade-form-components-on-laravel-cc2f831c769d
+- https://medium.com/@awais.sds/generate-laravel-11-api-crud-in-2-min-2124540990f9
+- https://medium.com/@mohammad.roshandelpoor/monitoring-and-error-tracking-in-laravel-59c31b985c0d
+- https://medium.com/@dayoolapeju/exception-error-handling-in-laravel-25843a8aabb3
+- https://medium.com/@mwaqasiu/creating-test-data-in-laravel-a-comprehensive-guide-to-factories-and-seeders-375f516f7da
+- https://medium.com/@mwaqasiu/unlocking-the-power-of-has-one-of-many-relationship-in-laravel-real-life-examples-with-eager-ff2c5c9b74ef
+- https://medium.com/@mwaqasiu/translating-text-in-laravel-made-easy-with-translatetexthelper-and-google-translate-library-214c7c76d655
+- 
 
 
 
