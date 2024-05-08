@@ -104,30 +104,30 @@ touch database/database.sqlite
 If using MySQL, MariaDB or similar, you will need to create the Database, Database user and Database user's password as
 required.
 
-The details are in the .env.mysql-dev file, and below:
+The details are in the `.env.mysql-dev` or `.env` file if you have performed the previous steps, and below:
 
-| Item             | Value                      |
-|------------------|----------------------------|
-| DB Name          | laravel_relationships_demo |
-| DB User          | laravel_relationships_demo |
-| DB User Password | DemoRelationships          |
-
+| Item                 | Value                      |
+|----------------------|----------------------------|
+| **DB Name**          | laravel_relationships_demo |
+| **DB User**          | laravel_relationships_demo |
+| **DB User Password** | DemoRelationships          |
 
 Run the migrations and seeders:
 
 ```shell
 php artisan migrate:fresh --seed
 ```
-> Remember that the fresh option must only be used in DEVELOPEMENT.
+
+> Remember that the `fresh` option must **only** be used in ***DEVELOPEMENT**.
+>
+> Also, the --seed flag should not be re-used in production, as it will attempt to re-add the starting data to the
+> database.
 
 You now need a second terminal instance that is in the applications' root folder so you are able to run:
 
 ```shell
 npm run dev
 ```
-
-
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
