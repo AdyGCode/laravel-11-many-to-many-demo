@@ -58,8 +58,48 @@ TO DO: Add extra, or update the contents as needed, then remove this line.
 
 ## Installation
 
-> Details of how to perform this demo application's installation will be 
-> added in the future...
+> Instructions are given using the BASH or Git-BASH CLI only.
+
+> IMPORTANT:
+> 
+> We presume you are working in a folder called `Source/Repos` in your account's 
+> root folder (eg. `/c/Users/YourName/`).
+
+Clone the repository:
+
+```shell
+cd $HOME/Source/Repos
+git clone https://github.com/AdyGCode/laravel-11-many-to-many-demo.git
+```
+
+Change into the folder and run the `composer` and `npm` installers:
+
+```shell
+cd laravel-11-many-to-many-demo
+composer install
+npm i
+```
+
+Copy the relevant `.env.sqlite` or `.env.mysql-dev` file renaming it `.env`.
+```shell
+cp .env.sqlite .env
+```
+or
+```shell
+cp .env.mysql-dev .env
+```
+
+Create a new app key:
+```shell
+php artisan key:generate
+```
+
+If using SQLite you need to have a `database.sqlite` file, create it using:
+```shell
+touch database/database.sqlite
+```
+
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
