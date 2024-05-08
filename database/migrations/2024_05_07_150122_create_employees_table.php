@@ -18,7 +18,9 @@ return new class extends Migration
             $table->string('family_name');
             $table->string('email');
             $table->string('job_title')->nullable();
-            $table->unsignedBigInteger('manager')->nullable();
+
+            $table->unsignedBigInteger('manager_id')->nullable();
+
             $table->foreignIdFor(Department::class);
             $table->timestamps();
         });

@@ -13,7 +13,8 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments = Department::with('manager')->paginate(5);
+        $departments = Department::with('managedBy')->paginate(5);
+
         return view('departments.index', compact(['departments']));
     }
 

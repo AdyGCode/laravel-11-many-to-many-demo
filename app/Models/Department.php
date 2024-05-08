@@ -4,18 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Department extends Model
 {
     use HasFactory;
 
 
-    public function manager()
+    // $this department is MANAGED BY ONE (belongs to) employee
+    public function managedBy(): BelongsTo
     {
-        return $this->hasOne(Employee::class);
+        return $this->belongsTo(Employee::class, 'manager_id');
     }
 
-    public function employees()
+    // $this department HAS MANY employees
+    public function employees(): HasMany
     {
         return $this->hasMany(Employee::class);
     }

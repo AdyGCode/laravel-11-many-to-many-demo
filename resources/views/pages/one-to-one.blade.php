@@ -15,12 +15,12 @@
                      alt="Your Image"
                      class="mx-auto">
                 <figcaption class="text-xs bg-neutral-200 p-1 text-center w-full">
-                    Image showing One to One Relationship
+                    Image showing a One-to-One Relationship
                 </figcaption>
             </figure>
 
             <p>
-                One to One relationships are a less likely to appear when developing an application. In fact when
+                One-to-One (1:1) relationships are a less likely to appear when developing an application. In fact when
                 looking into the examples for this section, we found it difficult to derive real world examples that
                 did not need some 'exercise' to make meaningful.
             </p>

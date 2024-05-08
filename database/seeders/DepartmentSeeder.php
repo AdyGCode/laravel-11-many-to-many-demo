@@ -17,31 +17,31 @@ class DepartmentSeeder extends Seeder
         $departments = [
             [
                 'name' => 'Administration',
-                'manager' => 1,
+                'manager_id' => 1,
             ],
             [
                 'name' => 'Marketing',
-                'manager' => 2,
+                'manager_id' => 2,
             ],
             [
                 'name' => 'White Goods',
-                'manager' => 5,
+                'manager_id' => 5,
             ],
             [
                 'name' => 'Sports',
-                'manager' => 6,
+                'manager_id' => 6,
             ],
             [
                 'name' => 'Shoes',
-                'manager' => 7,
+                'manager_id' => 7,
             ],
             [
                 'name' => 'Clothing',
-                'manager' => 8,
+                'manager_id' => 8,
             ],
             [
                 'name' => 'Toys & Games',
-                'manager' => 9,
+                'manager_id' => 9,
             ],
         ];
 

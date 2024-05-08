@@ -19,7 +19,7 @@
                              alt="Your Image"
                              class="mx-auto pb-1">
                         <figcaption class="text-xs bg-neutral-200 p-1 text-center w-full">
-                            Image showing a One to Many Relationship
+                            Image showing a One-to-Many Relationship
                         </figcaption>
                     </figure>
                 </header>
@@ -30,10 +30,9 @@
                 </p>
 
                 <p>
-                    The one-to-many (1:m) relationship is possibly the most commonly seen. You will see in the many to
-                    many (m:m) relationship how we deconstruct the m:m to use 1:m relationships and to provide a more
-                    robust
-                    data structure.
+                    The one-to-many (1:m) relationship is possibly the most commonly seen. You will see in
+                    the many-to-many (m:m) relationship how we deconstruct the m:m to use 1:m relationships and
+                    to provide a more robust data structure.
                 </p>
 
                 <p>
@@ -52,6 +51,12 @@
                     </dt>
                     <dd class="mx-4 font-neutral-700">
                         a customer HAS MANY orders, but each order BELONGS TO ONE customer.
+                    </dd>
+                    <dt class="font-semibold font-neutral-900">
+                        Employee - Manager:
+                    </dt>
+                    <dd class="mx-4 font-neutral-700">
+                        An employee HAS A manager, and the manager HAS MANY employees to manage.
                     </dd>
                     <dt class="font-semibold font-neutral-900">
                         More examples:

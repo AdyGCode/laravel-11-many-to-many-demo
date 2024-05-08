@@ -24,7 +24,7 @@
                      alt="Your Image"
                      class="mx-auto">
                 <figcaption class="text-xs bg-neutral-200 p-1 text-center w-full">
-                    Image showing Many to Many transformed to One to Many : Many to One
+                    Image showing Many-to-Many transformed to One-to-Many : Many-to-One
                 </figcaption>
             </figure>
 
