@@ -120,7 +120,7 @@ php artisan migrate:fresh --seed
 
 > Remember that the `fresh` option must **only** be used in ***DEVELOPEMENT**.
 >
-> Also, the --seed flag should not be re-used in production, as it will attempt to re-add the starting data to the
+> Also, the `--seed` flag should not be re-used in production, as it will attempt to re-add the starting data to the
 > database.
 
 You now need a second terminal instance that is in the applications' root folder so you are able to run:
@@ -128,6 +128,8 @@ You now need a second terminal instance that is in the applications' root folder
 ```shell
 npm run dev
 ```
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
