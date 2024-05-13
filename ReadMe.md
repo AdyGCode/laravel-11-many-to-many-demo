@@ -226,7 +226,8 @@ corporate or other materials both digital and non-digital.
 - https://www.itsolutionstuff.com/post/laravel-one-to-one-eloquent-relationship-tutorialexample.html
 - 
 
-Medium articles require a subscription to view more than 3 in a week
+Medium articles require a subscription to view
+
 - https://medium.com/@maitrikt1998/laravel-one-to-one-relationship-full-guide-84569cb009c8
 - https://raviyatechnical.medium.com/laravel-eloquent-relationships-laravel-one-to-one-eloquent-relationship-tutorial-69a2835de23d
 - https://arjunamrutiya.medium.com/unveiling-laravels-one-to-one-polymorphic-relationship-a-step-by-step-guide-0a79b4118386

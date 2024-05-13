@@ -15,35 +15,59 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 
-// Add a route that can load an image from storage based on a parameter
-Route::get('/images/{imageName}', [ImageController::class, 'show'])->name('image.show');
+/**********************************************************************
+ * Image Rendering Route
+ *
+ * Add a route that can load an image from storage based on a parameter
+ **********************************************************************/
+Route::get('/images/{imageName}', [ImageController::class, 'show'])
+    ->name('image.show');
 
-Route::get('/1-to-1', [StaticPagesController::class, 'oneToOne'])->name('pages.one-to-one');
-Route::get('/1-to-many', [StaticPagesController::class, 'oneToMany'])->name('pages.one-to-many');
-Route::get('/many-to-many', [StaticPagesController::class, 'manyToMany'])->name('pages.many-to-many');
+/**********************************************************************
+ * Static Page Routes
+ *
+ * / and /welcome both call the welcome method.
+ * move welcome.blade.php into the pages folder
+ **********************************************************************/
+Route::get('/', [StaticPagesController::class, 'welcome'])
+    ->name('home');
+Route::get('/welcome', [StaticPagesController::class, 'welcome'])
+    ->name('welcome');
+Route::get('/1-to-1', [StaticPagesController::class, 'oneToOne'])
+    ->name('pages.one-to-one');
+Route::get('/1-to-many', [StaticPagesController::class, 'oneToMany'])
+    ->name('pages.one-to-many');
+Route::get('/many-to-many', [StaticPagesController::class, 'manyToMany'])
+    ->name('pages.many-to-many');
 
+/**********************************************************************
+ * Resourceful Routes
+ **********************************************************************/
 Route::resource('courses', CourseController::class);
-Route::resource('students', StudentController::class);
-
 Route::resource('customers', CustomerController::class);
-
 Route::resource('departments', DepartmentController::class);
 Route::resource('employees', EmployeeController::class);
+Route::resource('students', StudentController::class);
 
+/**********************************************************************
+ * Protected Routes - Authenticated & Verified
+ **********************************************************************/
+Route::middleware(['auth', 'verified'])->group(function() {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
+/**********************************************************************
+ * Protected Routes - Authenticated
+ **********************************************************************/
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile', [ProfileController::class, 'edit'])
+        ->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])
+        ->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])
+        ->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class StaticPagesController extends Controller
 {
+    public function welcome()
+    {
+        return view('pages.welcome');
+    }
 
     public function oneToOne()
     {
