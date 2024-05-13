@@ -3,6 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Many to Many - Students') }}
         </h2>
+        <a href="{{ route('pages.many-to-many') }}">Back</a>
     </x-slot>
 
     <section class="py-6 flex flex-col gap-4 max-w-7xl">

@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('One to Many - Customers') }}
+            {{ __('One to Many - Orders') }}
         </h2>
         <a href="{{ route('pages.one-to-many') }}">Back</a>
     </x-slot>
@@ -17,7 +17,7 @@
             </p>
 
             <p>
-                In this example we have customers who have made zero or more orders.
+                In this example we have orders which must have a customer related to them.
             </p>
 
             <figure class="w-full p-1 shadow flex flex-col gap-1">
@@ -35,15 +35,26 @@
 
             <div class="p-6 text-gray-900 flex flex-col gap-8">
                 <div>
-                    {{ $customers->links() }}
+                    {{ $orders->links() }}
                 </div>
 
-                @foreach($customers as $customer)
+                @foreach($orders as $order)
                     <article class="h-full flex flex-col bg-white shadow rounded">
 
-                        <header class="bg-neutral-600 text-neutral-200 p-4 rounded-t ">
-                            <h3 class="text-bold text-xl">{{ $customer->fullName }}</h3>
-                            <h6 class="text-bold text-sm">{{ $customer->email }}</h6>
+                        <header class="@if(!$order->customer()->count()) bg-red-500 @else  bg-neutral-600 @endif
+                                       text-neutral-200 p-4 rounded-t ">
+                            <h4>Order: {{ $order->id }}</h4>
+                            <h3 class="text-bold text-xl">
+                                @if(!$order->customer()->count())
+                                    <span class="font-semibold w-full px-4 "
+                                          colspan="3">
+                                        {{ __("ERROR: No Customer") }}
+                                    </span>
+                                @else
+                                    {{ ($order->customer())->get()[0]->fullName}}
+                                @endif
+                            </h3>
+
                         </header>
 
                         <table class="table">
@@ -57,23 +68,14 @@
                             </thead>
 
                             <tbody>
-                            @foreach($customer->orders as $order)
-                                <tr class="border-b border-t-neutral-200 text-sm">
-                                    <td class="border-r px-1 pl-2 ">{{ $order->id }}</td>
-                                    <td class="border-r px-1">{{ $order->created_at }}</td>
-                                    <td class="border-r px-1">{{ $order->packed_at }}</td>
-                                    <td class=" px-1 pr-2 ">{{ $order->shipped_at }}</td>
-                                </tr>
-                            @endforeach
+                            <tr class="border-b border-t-neutral-200 text-sm">
+                                <td class="border-r px-1 pl-2 ">{{ $order->id }}</td>
+                                <td class="border-r px-1">{{ $order->created_at }}</td>
+                                <td class="border-r px-1">{{ $order->packed_at }}</td>
+                                <td class=" px-1 pr-2 ">{{ $order->shipped_at }}</td>
+                            </tr>
 
-                            @if(!$customer->orders()->count())
-                                <tr class="rounded-b">
-                                    <td></td>
-                                    <td class="font-semibold w-full px-0 text-neutral-500" colspan="3">
-                                        {{ __("No Orders") }}
-                                    </td>
-                                </tr>
-                            @endif
+
                             </tbody>
 
                         </table>

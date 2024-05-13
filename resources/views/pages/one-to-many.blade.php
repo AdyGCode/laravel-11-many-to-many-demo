@@ -16,7 +16,7 @@
 
                     <figure class="w-full p-1 shadow">
                         <img src="{{ route('image.show', ['imageName' => 'ER-One-to-Many.png']) }}"
-                             alt="Your Image"
+                             alt="Image showing a One-to-Many Relationship"
                              class="mx-auto pb-1">
                         <figcaption class="text-xs bg-neutral-200 p-1 text-center w-full">
                             Image showing a One-to-Many Relationship
@@ -86,7 +86,7 @@
                         Customers / Orders
                     </a>
 
-                    <a href="{{ route('home') }}"
+                    <a href="{{ route('orders.index') }}"
                        class="w-1/2 border-2 bg-neutral-800 text-neutral-100 hover:bg-neutral-100 hover:text-neutral-800
                     transition duration-500 ease-in-out text-center p-6 rounded-xl shadow hover:shadow-inner">
                         Orders / Customers

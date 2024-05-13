@@ -4,6 +4,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StudentController;
 
 use App\Http\Controllers\StaticPagesController;
@@ -47,6 +48,7 @@ Route::resource('courses', CourseController::class);
 Route::resource('customers', CustomerController::class);
 Route::resource('departments', DepartmentController::class);
 Route::resource('employees', EmployeeController::class);
+Route::resource('orders', OrderController::class);
 Route::resource('students', StudentController::class);
 
 /**********************************************************************

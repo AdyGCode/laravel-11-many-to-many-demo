@@ -3,6 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('One to One') }}
         </h2>
+        <a href="{{ route('pages.one-to-one') }}">Back</a>
     </x-slot>
 
     <section class="py-6 flex flex-col gap-4 max-w-7xl">
@@ -18,15 +19,15 @@
 
         <div class="w-full p-2 sm:p-6 lg:p-8 bg-white overflow-hidden shadow-md sm:rounded-lg">
 
-                <h3 class="text-lg font-bold text-neutral-500 border-b-2 mb-6">
-                    Employees
-                </h3>
+            <h3 class="text-lg font-bold text-neutral-500 border-b-2 mb-6">
+                Employees
+            </h3>
 
-                <div>
-                    {{ $employees->links() }}
-                </div>
+            <div>
+                {{ $employees->links() }}
+            </div>
 
-                <div class="p-6 text-gray-900 grid grid-cols-3 gap-8">
+            <div class="p-6 text-gray-900 grid grid-cols-3 gap-8">
 
                 @foreach($employees as $employee)
 

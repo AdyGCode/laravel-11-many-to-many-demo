@@ -13,7 +13,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        // reduce N+1 query issue using the with
+        $orders=Order::with('customer')->paginate(5);
+        return view('orders.index', compact(['orders']));
     }
 
     /**
