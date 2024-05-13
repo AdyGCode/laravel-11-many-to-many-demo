@@ -1,2 +1,6 @@
 *
 !.gitignore
+!images/*.png
+!images/*.svg
+!images/*.jpg
+!images/*.webp

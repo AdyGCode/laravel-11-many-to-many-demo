@@ -17,7 +17,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-!/storage/app/public/images
+
 
 ### Laravel template
 /vendor/
