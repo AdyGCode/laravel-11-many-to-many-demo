@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <section class="py-6  grid grid-cols-2 gap-4 max-w-7xl">
+    <section class="py-6 masonry sm:masonry-sm space-y-8 max-w-7xl">
 
         <section class="w-full p-2 sm:p-6 lg:p-8 bg-white overflow-hidden shadow-sm sm:rounded-lg flex flex-col gap-4">
             <h3 class="text-lg font-bold text-neutral-500 border-b-2">One to One</h3>
@@ -57,12 +57,11 @@
             </dl>
 
             <p>
-                As we indicated the above a a little 'contrived' and in reality we would seldom create such 'obtuse'
+                As we indicated the above are a little 'contrived' and in reality we would seldom create such 'obtuse'
                 relationships, especially when one-to-many may serve the same purpose and allow for more flexibility.
             </p>
 
         </section>
-
 
         <section class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <section class="p-6 text-gray-900 flex flex-col">
@@ -90,6 +89,67 @@
 
             </section>
         </section>
+
+        <section class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <section class="p-6 text-gray-900 flex flex-col gap-8">
+                <header class="mb-8 flex flex-col gap-4">
+                    <h3 class="text-lg font-bold text-neutral-500 border-b-2">Coding</h3>
+                    <p>
+                        Our example is using the Manager to Department relationship.
+                    </p>
+                    <p>In this example, we have a table, "employees". This means we do not
+                        have to separate managers out, and are able to use the employee id
+                        to identify which department they manage (if at all).</p>
+                </header>
+
+                <section class="flex flex-col gap-4">
+
+                    <h4 class="text-2xl">app/models/Employee.php</h4>
+                    <p>A manager HAS ONE department (Manager manages one department).</p>
+                    <pre class="bg-sky-200/75 rounded-xl p-4"><code class="">public function department(): HasOne
+{
+  return $this->hasOne(Department::class, 'manager_id');
+}
+</code></pre>
+                </section>
+
+                <section class="flex flex-col gap-4">
+
+                    <h4 class="text-2xl">app/models/Department.php</h4>
+                    <p>A department BELONGS TO ONE employee (A department has ONE manager).</p>
+                    <pre class="bg-sky-200/75 rounded-xl p-4"><code class="">public function managedBy(): BelongsTo
+{
+  return $this->belongsTo(Employee::class, 'manager_id');
+}
+</code></pre>
+                </section>
+
+                <section class="flex flex-col gap-4">
+                    <h4 class="text-2xl">app/Http/Controllers/DepartmentController.php</h4>
+                    <p>The index method retrieves all the departments and the associated managers.</p>
+                    <pre class="bg-sky-200/75 rounded-xl p-4"><code class="">public function index()
+{
+  $departments = Department::with('managedBy')->paginate(5);
+
+  return view('departments.index', compact(['departments']));
+}</code></pre>
+                </section>
+
+                <section class="flex flex-col gap-4">
+                    <h4 class="text-2xl">app/Http/Controllers/EmployeeController.php</h4>
+                    <p>The index method retrieves all the employees and the department (if at all) they manager.</p>
+                    <pre class="bg-sky-200/75 rounded-xl p-4"><code class="">public function index()
+{
+    $employees = Employee::with('department')->paginate(5);
+    return view('employees.index', compact(['employees']));
+}</code></pre>
+                </section>
+
+            </section>
+
+        </section>
+
+
 
     </section>
 
