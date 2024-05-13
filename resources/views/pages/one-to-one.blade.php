@@ -149,8 +149,6 @@
 
         </section>
 
-
-
     </section>
 
 </x-guest-layout>
