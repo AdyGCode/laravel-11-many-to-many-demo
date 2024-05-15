@@ -23,6 +23,9 @@ class UserSeeder extends Seeder
         ]);
 
         // Additional Seed Users
+        // Check the UserFactory -
+        //   Fields are defined in the factory with default values
+        //   The password, if not given will default to `password`
         $seedUsers = [
             [
                 'name' => 'Adrian Gould',
