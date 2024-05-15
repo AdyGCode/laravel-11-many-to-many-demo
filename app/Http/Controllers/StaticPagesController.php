@@ -8,7 +8,8 @@ class StaticPagesController extends Controller
 {
     public function welcome()
     {
-        return view('pages.welcome');
+        $host = request()->getSchemeAndHttpHost();
+        return view('pages.welcome', compact(['host',]));
     }
 
     public function oneToOne()
