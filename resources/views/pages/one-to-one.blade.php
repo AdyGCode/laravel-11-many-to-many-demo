@@ -106,7 +106,7 @@
 
                     <h4 class="text-2xl">app/models/Employee.php</h4>
                     <p>A manager HAS ONE department (Manager manages one department).</p>
-                    <pre class="bg-sky-200/75 rounded-xl p-4"><code class="">public function department(): HasOne
+                    <pre><code class="language-php">public function department(): HasOne
 {
   return $this->hasOne(Department::class, 'manager_id');
 }
@@ -117,7 +117,7 @@
 
                     <h4 class="text-2xl">app/models/Department.php</h4>
                     <p>A department BELONGS TO ONE employee (A department has ONE manager).</p>
-                    <pre class="bg-sky-200/75 rounded-xl p-4"><code class="">public function managedBy(): BelongsTo
+                    <pre><code class="language-php">public function managedBy(): BelongsTo
 {
   return $this->belongsTo(Employee::class, 'manager_id');
 }
@@ -127,7 +127,7 @@
                 <section class="flex flex-col gap-4">
                     <h4 class="text-2xl">app/Http/Controllers/DepartmentController.php</h4>
                     <p>The index method retrieves all the departments and the associated managers.</p>
-                    <pre class="bg-sky-200/75 rounded-xl p-4"><code class="">public function index()
+                    <pre><code class="language-php">public function index()
 {
   $departments = Department::with('managedBy')->paginate(5);
 
@@ -138,7 +138,7 @@
                 <section class="flex flex-col gap-4">
                     <h4 class="text-2xl">app/Http/Controllers/EmployeeController.php</h4>
                     <p>The index method retrieves all the employees and the department (if at all) they manager.</p>
-                    <pre class="bg-sky-200/75 rounded-xl p-4"><code class="">public function index()
+                    <pre><code class="language-php">public function index()
 {
     $employees = Employee::with('department')->paginate(5);
     return view('employees.index', compact(['employees']));

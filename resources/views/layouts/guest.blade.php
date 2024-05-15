@@ -11,13 +11,25 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
           integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script type="module">
+        import hljs from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/highlight.min.js';
+        //  and it's easy to individually load additional languages
+        import go from 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/es/languages/go.min.js';
+
+        hljs.registerLanguage('go', go);
+    </script>
+
 </head>
 <body class="font-sans antialiased">
 <div class="min-h-screen bg-neutral-100 flex flex-between flex-col">
@@ -48,6 +60,7 @@
 
     @include('layouts.dev-mode')
 
+    <script>hljs.highlightAll();</script>
 </div>
 </body>
 </html>
