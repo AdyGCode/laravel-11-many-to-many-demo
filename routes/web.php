@@ -48,7 +48,22 @@ Route::resource('courses', CourseController::class);
 Route::resource('customers', CustomerController::class);
 Route::resource('departments', DepartmentController::class);
 Route::resource('employees', EmployeeController::class);
+
+/**
+ * Non-Resourceful routing requires EVERY route to be declared:
+ *        HTTP VERB  URI               Controller class         method to call        route alias route('name of route')
+ * Route::get(       '/orders',       [OrderController::class, 'index'])              ->name('orders.index');
+ * Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
+ * Route::get('/orders/create', [OrderController::class, 'create'])->name('orders.create');
+ * Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+ * Route::put('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
+ * OR Route::patch('/orders/{order}', [OrderController::class, 'update'])->name('orders.update');
+ * Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->name('orders.delete');
+ * Route::get('/orders/{order}/edit', [OrderController::class, 'edit'])->name('orders.edit');
+ */
+
 Route::resource('orders', OrderController::class);
+
 Route::resource('students', StudentController::class);
 
 /**********************************************************************
