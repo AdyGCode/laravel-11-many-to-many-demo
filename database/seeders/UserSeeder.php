@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
     {
         // Create Admin user
         User::factory()->create([
+            'id' => 999,
             'name' => 'Admin',
             'email' => 'admin@example.com',
             'city' => "Perth",
@@ -28,11 +29,12 @@ class UserSeeder extends Seeder
         //   The password, if not given will default to `password`
         $seedUsers = [
             [
+                'id' => 10000,
                 'name' => 'Adrian Gould',
                 'email' => 'adrian.gould@example.com',
                 'city' => "Perth",
                 'state' => 'WA',
-                'password' => "Password1",
+                'password' => "Secret1",
             ],
             [
                 'name' => 'Ivanna Vinn',
@@ -85,5 +87,8 @@ class UserSeeder extends Seeder
         foreach ($seedUsers as $seedUser) {
             User::factory()->create($seedUser);
         }
+
+        // Create five more random (unverified) users
+        User::factory(5)->unverified()->create();
     }
 }

@@ -29,7 +29,7 @@ class UserFactory extends Factory
             'name' => fake('en-AU')->name(),
             'email' => fake('en-AU')->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => Hash::make(static::$password ?? 'Password1'),
             'remember_token' => Str::random(10),
             'city' => static::$city ??= fake('en-AU')->city(),
             'state' => static::$state ??= "WA",
